@@ -6,7 +6,8 @@ int main() {
 	int x, i;
 	cout << "¬ведите число" << endl;
 	if(cin >> x){
-		for (i = 1; i <= 10; i++) {
+		cout << x << " ";
+		for (i = 1; i <= 9; i++) {
 			cout << x + i << " ";
 		}
 	}
