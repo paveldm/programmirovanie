@@ -7,16 +7,18 @@ int main() {
 	double x, a;
 	cout << "Введите x и a" << endl;
 	if (cin >> x >> a) {
-		if ((x * x) < a) {
-			if (abs(x) < 1) {
-				cout << a * log(abs(x));
-			}
-			else if (abs(x) >= 1) {
-				cout << sqrt(a - x * x);
-			}
+		if (abs(x) < 1 and abs(x) > 0) {
+			cout << a * log(abs(x));
 		}
-		else if (x * x >= a) {
-			cout << "Недопустимые значения";
+		else if (abs(x) >= 1) {
+			if ((x * x) < a) {
+				if (abs(x) >= 1) {
+					cout << sqrt(a - x * x);
+				}
+				else if (x * x >= a) {
+					cout << "Недопустимые значения";
+				}
+			}
 		}
 	}
 	else {
