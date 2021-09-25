@@ -3,23 +3,24 @@
 
 using namespace std;
 int main() {
-    double s, m, n, r;
-    r = 0;
-    if (cin >> s >> m >> n and s > 0 and m > 0 and n > 0) {
-        while ((s * r * pow(1 + r, n)) / (12 * (pow(1 + r, n) - 1)) <= m) {
-            r = r + 0.05;
-        }    
-        cout << r * 100;
-    }
-    else {
-        cout << "Неверный формат";
-    }
-    return 0;
- }
-
-for (r = 0; r <= 1; r = r + 0.05) {
-    if ((s * r * pow(1 + r, n)) / (12 * (pow(1 + r, n) - 1)) >= m) {
-        cout << r * 100;
-        break;
-    }
+	setlocale(0, "");
+	double p, s, m, n, r, x;
+	cout << "Введите s, m, n" << endl;
+	if ((cin >> s >> m >> n) and s > 0 and m > 0 and n > 0) {
+		p = 0;
+		while (p < 100) {
+			r = p / 100;
+			if (pow((1 + r), n) > 1) {
+				x = (s * r * pow((1 + r), n)) / (12 * (pow(1 + r, n) - 1));
+				if (m - x > -1 and m - x < 1) {
+					cout << p << endl;
+					break;
+				}
+			}
+			p = p + 0.001;
+		}
+	}
+	else {
+		cout << "Неверный формат";
+	}
 }
