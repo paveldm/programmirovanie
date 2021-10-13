@@ -6,7 +6,7 @@ using namespace std;
 int main() {
 	setlocale(0, "");
 
-	string a, b;
+	string a, b, c;
 	char pred;
 	pred = ' ';
 
@@ -18,6 +18,7 @@ int main() {
 	ifstream file_read("1.txt");
 
 	for (int i = 0; i < a.length(); i++) {
+		int t = 0;
 		b = ' ';
 		bool flag = true;
 		if (isdigit(a[i]) and (pred == ' ' or pred == '-')) {
@@ -25,18 +26,25 @@ int main() {
 				b = ' ';
 			}
 			else {
-				b = ' -';
+				b = " -";
 			}
 			while (a[i] != ' ' and i < a.length()) {
 				if (!(isdigit(a[i])) and a[i] != '.') {
 					flag = false;
 				}
+				if (a[i] == '.') {
+					t++;
+				}
 				b += a[i];
 				i++;
+			}
+			if (t > 1) {
+				flag = false;
 			}
 			if (flag) {
 				cout << b; 
 			}
+			t = 0;
 		}
 		pred = a[i];
 	}
