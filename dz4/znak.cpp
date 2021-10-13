@@ -1,22 +1,27 @@
 #include <iostream>
 using namespace std;
 
+int sign(double x){
+	if (x > 0) {
+		return 1;
+	}
+	else if (x == 0) {
+		return 0;
+	}
+	else {
+		return -1;
+	}
+}
+
 int main() {
 	setlocale(0, "");
-	float x;
+	double x;
 	cout << "¬ведите число" << "\n";
 	if (cin >> x) {
-		if (x > 0) {
-			cout << 1;
-		}
-		else if (x == 0) {
-			cout << 0;
-		}
-		else {
-			cout << -1;
-		}
+		cout << sign(x);
 	}
 	else {
 		cout << "¬ведена буква";
 	}
+	return 0;
 }
