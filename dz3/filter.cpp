@@ -6,7 +6,7 @@ using namespace std;
 int main() {
 	setlocale(0, "");
 
-	string a, b, c;
+	string a, b;
 	char pred;
 	pred = ' ';
 
