@@ -17,7 +17,7 @@ int main() {
 					break;
 				}
 			}
-			p = p + 0.001;
+			p = p + 0.00001;
 		}
 	}
 	else {
