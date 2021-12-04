@@ -9,6 +9,14 @@ int main() {
 		cout << "¬ведена буква";
 		return 0;
 	}
+	else if (n < 0 or m < 0) {
+		cout << "¬ведено отрицательное число";
+		return 0;
+	}
+	else if (n > 75000 or m > 75000) {
+		cout << "„исло превышает 75000";
+		return 0;
+	}
 	for (int x1 = 0; x1 < n; x1++) {
 		for (int x2 = x1; x2 < n; x2++) {
 			x++;

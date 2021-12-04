@@ -9,6 +9,14 @@ int main() {
 		cout << "¬ведена буква";
 		return 0;
 	}
+	else if (m < 0) {
+		cout << "¬ведено отрицательное число";
+		return 0;
+	}
+	else if (m > 2000000000) {
+		cout << "„исло превышает 2*10^9";
+		return 0;
+	}
 	int cnt4 = m % 3;
 	int cnt3 = (m - 4 * cnt4) / 3;
 	if (cnt3 >= 0) {
